@@ -1,0 +1,234 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.backdrop {
+  position: relative;
+  background-size: cover;
+  background-position: center top;
+  background-color: var(--color-surface-2);
+}
+
+.backdropOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--color-bg) 55%, transparent),
+    var(--color-bg) 92%
+  );
+}
+
+.hero {
+  position: relative;
+  padding-block: $space-xl;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  margin-bottom: $space-lg;
+  padding: $space-xs $space-md;
+  font-weight: 600;
+  border-radius: $radius-full;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  transition: transform $transition-fast;
+
+  &:hover {
+    transform: translateX(-3px);
+  }
+}
+
+.heroBody {
+  display: flex;
+  flex-direction: column;
+  gap: $space-lg;
+
+  @include respond('md') {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: $space-xl;
+  }
+}
+
+.poster {
+  width: 180px;
+  border-radius: $radius-lg;
+  box-shadow: var(--shadow-card);
+  align-self: center;
+
+  @include respond('md') {
+    width: 280px;
+    align-self: flex-start;
+    flex-shrink: 0;
+  }
+}
+
+.meta {
+  flex: 1;
+}
+
+.title {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  font-weight: 800;
+  line-height: 1.2;
+  overflow-wrap: break-word;
+}
+
+.year {
+  color: var(--color-text-muted);
+  font-weight: 600;
+}
+
+.tagline {
+  margin-top: $space-xs;
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: $space-md;
+  margin-block: $space-md;
+  font-weight: 600;
+}
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: var(--color-accent);
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-sm;
+  margin-bottom: $space-lg;
+}
+
+.genre {
+  padding: 2px $space-md;
+  font-size: $fs-sm;
+  border-radius: $radius-full;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $space-md;
+  margin-bottom: $space-lg;
+}
+
+.trailerBtn,
+.favBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  padding: $space-sm $space-lg;
+  font-weight: 700;
+  border-radius: $radius-full;
+  transition: transform $transition-fast, background $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+  }
+}
+
+.trailerBtn {
+  color: #fff;
+  background: var(--color-primary);
+
+  &:hover {
+    background: var(--color-primary-hover);
+  }
+}
+
+.favBtn {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+.favActive {
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.overview {
+  h2 {
+    font-size: $fs-lg;
+    margin-bottom: $space-xs;
+  }
+
+  p {
+    color: var(--color-text-muted);
+    max-width: 70ch;
+  }
+}
+
+.section {
+  margin-block: $space-2xl;
+}
+
+.sectionTitle {
+  font-size: $fs-xl;
+  font-weight: 800;
+  margin-bottom: $space-md;
+}
+
+.castRow {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 120px;
+  gap: $space-md;
+  overflow-x: auto;
+  padding-bottom: $space-md;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: $space-md;
+  scroll-behavior: smooth;
+  @include custom-scrollbar;
+
+  @include respond('md') {
+    grid-auto-columns: 140px;
+  }
+}
+
+.castCard {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  scroll-snap-align: start;
+}
+
+.castPhoto,
+.castPhotoFallback {
+  width: 100%;
+  aspect-ratio: 2 / 3;
+  border-radius: $radius-md;
+  object-fit: cover;
+  background: var(--color-surface-2);
+}
+
+.castPhotoFallback {
+  @include flex-center;
+  color: var(--color-text-muted);
+  opacity: 0.5;
+}
+
+.castName {
+  margin-top: $space-xs;
+  font-weight: 700;
+  font-size: $fs-sm;
+  @include line-clamp(1);
+}
+
+.castChar {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  @include line-clamp(1);
+}

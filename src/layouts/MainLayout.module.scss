@@ -1,0 +1,7 @@
+@use '@/styles/variables' as *;
+
+.main {
+  flex: 1;
+  width: 100%;
+  padding-block: $space-xl;
+}

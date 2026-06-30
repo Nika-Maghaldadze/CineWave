@@ -1,0 +1,60 @@
+{
+  "nav": {
+    "brand": "CineWave",
+    "home": "Home",
+    "favorites": "Favorites",
+    "searchPlaceholder": "Search movies..."
+  },
+  "home": {
+    "heroTitle": "Discover your next favorite movie",
+    "heroSubtitle": "Browse trending and popular films, watch trailers and build your own watchlist.",
+    "trending": "Trending this week",
+    "popular": "Popular movies",
+    "browseByGenre": "Browse by genre",
+    "allGenres": "All",
+    "loadMore": "Load more",
+    "searchResultsFor": "Results for \"{{query}}\"",
+    "noResults": "No movies found. Try a different search."
+  },
+  "movie": {
+    "overview": "Overview",
+    "watchTrailer": "Watch trailer",
+    "noTrailer": "No trailer available",
+    "cast": "Top cast",
+    "similar": "Similar movies",
+    "addToFavorites": "Add to favorites",
+    "removeFromFavorites": "Remove from favorites",
+    "releaseDate": "Release date",
+    "runtime": "Runtime",
+    "rating": "Rating",
+    "status": "Status",
+    "minutes": "{{value}} min",
+    "back": "Back"
+  },
+  "favorites": {
+    "title": "My favorites",
+    "subtitle": "{{value}} saved",
+    "empty": "No favorites yet",
+    "emptyHint": "Tap the heart on any movie to save it here.",
+    "browse": "Browse movies"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "close": "Close"
+  },
+  "footer": {
+    "tagline": "Built with React, TypeScript & the TMDB API.",
+    "rights": "All rights reserved."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "message": "The page you are looking for doesn't exist.",
+    "goHome": "Go home"
+  },
+  "a11y": {
+    "toggleTheme": "Toggle theme",
+    "changeLanguage": "Change language"
+  }
+}

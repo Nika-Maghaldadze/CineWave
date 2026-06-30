@@ -1,0 +1,22 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.toggle {
+  @include flex-center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  transition: background $transition-fast, transform $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: var(--color-border);
+  }
+}
+
+.icon {
+  display: inline-flex;
+  line-height: 1;
+}

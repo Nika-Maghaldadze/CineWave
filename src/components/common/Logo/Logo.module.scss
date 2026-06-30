@@ -1,0 +1,17 @@
+@use '@/styles/variables' as *;
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-xs;
+  font-weight: 800;
+}
+
+.mark {
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.wordmark {
+  letter-spacing: -0.5px;
+}

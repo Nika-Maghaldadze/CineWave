@@ -1,0 +1,81 @@
+@use '@/styles/variables' as *;
+@use '@/styles/mixins' as *;
+
+.hero {
+  text-align: center;
+  padding-block: $space-xl $space-lg;
+
+  @include respond('md') {
+    padding-block: $space-2xl $space-xl;
+  }
+}
+
+.heroTitle {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -1px;
+  max-width: 18ch;
+  margin-inline: auto;
+  margin-bottom: $space-sm;
+  overflow-wrap: break-word;
+
+  background: linear-gradient(
+    120deg,
+    var(--color-text),
+    var(--color-primary)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+  color: var(--color-text-muted);
+  max-width: 52ch;
+  margin-inline: auto;
+  margin-bottom: $space-xl;
+}
+
+.section {
+  margin-block: $space-xl;
+}
+
+.sectionTitle {
+  font-size: $fs-xl;
+  font-weight: 800;
+  margin-bottom: $space-md;
+}
+
+.noResults {
+  padding: $space-2xl 0;
+  text-align: center;
+  color: var(--color-text-muted);
+}
+
+.loadMoreWrap {
+  @include flex-center;
+  margin-top: $space-xl;
+}
+
+.loadMore {
+  padding: $space-sm $space-2xl;
+  font-weight: 700;
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: $radius-full;
+  transition: background $transition-fast, color $transition-fast,
+    border-color $transition-fast;
+
+  &:hover:not(:disabled) {
+    color: #fff;
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: progress;
+  }
+}
